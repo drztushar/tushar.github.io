@@ -1,119 +1,176 @@
-/* Footer area css
-============================================================================================ */
-.footer_area{
-    
-}
-.footer_inner{
-    text-align: center;
-    background: rgba(0, 0, 0, .5);
-    padding: 80px 0px 60px 0px;
-    margin-top: -30px;
-    img{
-        max-width: 100%;
-        margin-bottom: 40px;
+.footer_area{    
+    background: url("../images/footer.jpg") no-repeat; 
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;  
+    &:after{
+        content: "";
+        position: absolute;
+        top: 0;
+        background-color: rgba(0, 0, 0, .8);
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: block;
+        z-index: -1;
     }
-    ul{
-        li{
-            a{
-                background: #677fb5;
+    .footer_row{
+        padding-top: 95px;
+        padding-bottom: 50px;
+        .footer_about{
+            padding-bottom: 50px;
+            h2{
+                font: 400 18px $os;
+                text-transform: uppercase;
                 color: #fff;
+                padding-bottom: 25px;
             }
-            &:nth-child(2){
-                a{
-                    background: #70c2e9;
-                    color: #fff;
-                }
+            img{
+                max-width: 100%;
             }
-            &:nth-child(3){
-                a{
-                    background: #895a4d;
-                    color: #fff;
-                }
+            p{
+                font: 400 14px/26px $os;
+                color: #fefefe;
+                padding-top: 22px;
             }
-            &:nth-child(4){
-                a{
-                    background: #d34836;
-                    color: #fff;
-                }
-            }
-            &:nth-child(5){
-                a{
-                    background: #007ab9;
-                    color: #fff;
-                }
-            }
-            &:nth-child(6){
-                a{
-                    background: #d8545d;
-                    color: #fff;
-                }
-            }
-            &:nth-child(7){
-                a{
-                    background: #5ecbf3;
-                    color: #fff;
-                }
-            }
-            &:nth-child(8){
-                a{
-                    background: #ff3ba4;
-                    color: #fff;
-                }
-            }
-            &:nth-child(9){
-                a{
-                    background: #e299c2;
-                    color: #fff;
-                }
-            }
-            &:last-child{
-                a{
-                    background: #faaa5e;
-                    color: #fff;
-                }
-            }
-        }
-    }
-}
-.footer_copyright{
-    background: rgba(0, 0, 0, .7);
-    .pull-left{
-        h5{
-            font-size: 13px;
-            color: #fff;
-            font-family: $ral;
-            line-height: 100px;
-            a{
-                font-weight: bold;
-                color: $baseColor;
-            }
-        }
-    }
-    .pull-right{
-        .navbar-nav{
-            li{
-                margin-right: 40px;
-                a{
-                    padding: 0px;
-                    background: transparent;
-                    line-height: 100px;
-                    text-transform: uppercase;
-                    font-family: $ral;
-                    font-weight: bold;
-                    color: #fff;
-                    @include transition;
-                }
-                &:last-child{
-                    margin-right: 0px;
-                }
-                &:hover, &.active{
+            .socail_icon{
+                padding: 0;
+                margin: 0;
+                padding-top: 25px;
+                li{
+                    display: inline-block;
+                    list-style: none;
+                    padding-left: 8px;
+                    &:first-child{
+                        padding: 0;
+                    }
                     a{
-                        color: $baseColor;
+                        border: 2px solid $bc;
+                        display: block;
+                        line-height: 26px;
+                        width: 30px;
+                        text-align: center;
+                        position: relative;
+                        z-index: 1;
+                        &:after{
+                            content: "";
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            bottom: 0;
+                            right: 0;
+                            background: $bc;
+                            z-index: -1;
+                            transform: scaleY(0); 
+                            transform-origin: 50%; 
+                            transition-property: transform; 
+                            transition-duration: 0.3s; 
+                            transition-timing-function: ease-out
+                        }
+                        i{
+                            font-size: 14px;
+                            color: #fff;
+                            display: inline-block;
+                            padding-top: 7px;
+                        } 
+                        &:hover, &:focus{
+                            &:after{
+                                transform: scaleY(1);
+                            }
+                        }
+                    }
+                }
+            }
+            
+            //quick_link
+            .quick_link{
+                padding: 0;
+                margin: 0;
+                li{
+                    list-style: none;
+                    a{
+                        font: 400 14px/28px $roboto;
+                        color: #fefefe;
+                        position: relative;
+                        padding-left: 30px;
+                        i{
+                            font-size: 14px;
+                            color: $bc;
+                            padding-right: 20px;
+                            position: absolute;
+                            left: 0;
+                            bottom: 0;
+                            @include transition;
+                        }
+                        &:hover, &:focus{
+                            color: $bc;
+                            i{
+                                left: 8px;
+                            }
+                        }
+                    }
+                }
+            }
+            //twitter
+            .twitter{
+                font: 400 14px/28px $roboto;
+                color: #fefefe;
+                display: block;
+                padding-bottom: 15px;
+                &:hover, &:focus{
+                    color: $bc; 
+                }
+            }
+            //address
+            address{
+                p{
+                    font: 400 14px/28px $roboto;
+                    color: #fff;
+                    padding: 0;
+                }
+                .my_address{
+                    padding: 0;
+                    margin: 0;
+                    padding-top: 15px;
+                    li{
+                        list-style: none;
+                        a{ 
+                            font: 400 14px/28px $roboto;
+                            color: #fff; 
+                            i{ 
+                                color: $bc;
+                                padding-right: 20px;
+                                font-size: 14px;
+                                display: inline-block;
+                            }
+                             &:hover, &:focus{
+                                color: $bc; 
+                            }
+                        }
+                        span{
+                            display: inline-block;
+                            padding-left: 35px;
+                            margin-top: -30px;
+                        }
                     }
                 }
             }
         }
     }
+    .copyright_area{
+        background: #090909;
+        font: 400 14px/100px $roboto;
+        color: #fefefe;
+        text-align: center;
+        a{
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            color: $bc;
+            &:hover, &:focus{
+                color: #fefefe;
+            }
+        } 
+    }
 }
-/* End Footer area css
-============================================================================================ */
